@@ -1,7 +1,11 @@
 package com.cts.Base;
 
+import java.io.File;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -20,6 +24,11 @@ public class LaunchWebDriver
 	}
 	public static void tearDown(WebDriver driver)
 	{
+		Date date = new Date();
+		String dateStr = date.toString().replace(":","-");
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File file = ts.getScreenshotAs(OutputType.FILE);
+		file.renameTo(new File("src/test/resources/ScreenShot/image"+dateStr+".png"));
 		driver.quit();
 	}
 }
