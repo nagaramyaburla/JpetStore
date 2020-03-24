@@ -13,11 +13,12 @@ Scenario Outline: Register and Login
 	And User click on Sign In botton and enters User Id as "<userId>" and password as "<password>" and click on Login 
 	Then Assert for presence of Sign Out 
 	
-	Examples: 
+	Examples:
+		#Change Registration Details for time running the code 
 		| userId | password | firstName | lastName | email | phone | addressOne | addressTwo | city | state | zip | country |
-		| 1234567abab | qwertyuiop |Ramu|Ragam|aasdfghjkl@gmail.com|9876543210|Chinna gari colony|Kotha Peta|Kaikalur|AP|521333|India| 
-		| 1234567baab | asdfghjkl |Krishna|katugga|aasdfghjkl@gmail.com|9876543211|Chinna gari colony|Kotha Peta|Kaikalur|AP|521333|India| 
-		| 1234567caab | zxcvbnmasd |RajShekhar|Borra|aasdfghjkl@gmail.com|9876543212|Chinna gari colony|Kotha Peta|Kaikalur|AP|521333|India| 
+		| 1234567abac | qwertyuiop |Ramu|Ragam|aasdfghjkl@gmail.com|9876543210|Chinna gari colony|Kotha Peta|Kaikalur|AP|521333|India| 
+		| 1234567baac | asdfghjkl |Krishna|katugga|aasdfghjkl@gmail.com|9876543211|Chinna gari colony|Kotha Peta|Kaikalur|AP|521333|India| 
+		| 1234567caac | zxcvbnmasd |RajShekhar|Borra|aasdfghjkl@gmail.com|9876543212|Chinna gari colony|Kotha Peta|Kaikalur|AP|521333|India| 
 Scenario: Valid Search 
 	When User Search for "Fish" and click on search 
 	Then Assert for presence of GoldFish and close browser 
