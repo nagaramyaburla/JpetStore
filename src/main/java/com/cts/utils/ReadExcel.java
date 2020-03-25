@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcel {
 
-	public static String[][] getSheetIntoStringArray(String fileDetails, String sheetName) throws IOException {
+	public String[][] getSheetIntoStringArray(String fileDetails, String sheetName) throws IOException {
 		FileInputStream file = null;
 		XSSFWorkbook book = null;
 		String main[][] = null;

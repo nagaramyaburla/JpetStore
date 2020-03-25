@@ -5,9 +5,14 @@ import org.openqa.selenium.WebDriver;
 
 public class CheckOutPage 
 {
-	public static By checkOutLoc = By.linkText("Proceed to Checkout");
+	private WebDriver driver;
+	private By checkOutLoc = By.linkText("Proceed to Checkout");
 	
-	public static void clickOnProceedtoCheckout(WebDriver driver)
+	public CheckOutPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	public void clickOnProceedtoCheckout()
 	{
 		driver.findElement(checkOutLoc).click();
 	}

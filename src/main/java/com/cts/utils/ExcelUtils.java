@@ -8,9 +8,10 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelUtils {
-
-	public static String[][] getSheetIntoStringArray(String fileDetails, String sheetName) throws IOException 
+public class ExcelUtils 
+{
+	
+	public String[][] getSheetIntoStringArray(String fileDetails, String sheetName) throws IOException 
 	{
 		FileInputStream file = null;
 		XSSFWorkbook book = null;

@@ -5,14 +5,19 @@ import org.openqa.selenium.WebDriver;
 
 public class WelcomePage 
 {
-	public static By signOutLoc = By.linkText("Sign Out");
+	private WebDriver driver;
+	private By signOutLoc = By.linkText("Sign Out");
 			
-	public static String gettingTextOfSignOut(WebDriver driver)
+	public WelcomePage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	public String gettingTextOfSignOut()
 	{
 		String actualText = driver.findElement(signOutLoc).getText();
 		return actualText;
 	}
-	public static void clickOnSignOut(WebDriver driver)
+	public void clickOnSignOut()
 	{
 		driver.findElement(signOutLoc).click();
 	}

@@ -5,14 +5,19 @@ import org.openqa.selenium.WebDriver;
 
 public class ContinueAndConfirmPage 
 {
-	public static By continueLoc = By.name("newOrder");
-	public static By confirmLoc = By.linkText("Confirm");
+	private WebDriver driver;
+	private By continueLoc = By.name("newOrder");
+	private By confirmLoc = By.linkText("Confirm");
 	
-	public static void clickOnContinue(WebDriver driver)
+	public ContinueAndConfirmPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	public void clickOnContinue()
 	{
 		driver.findElement(continueLoc).click();
 	}
-	public static void clickOnConfirm(WebDriver driver)
+	public void clickOnConfirm()
 	{
 		driver.findElement(confirmLoc).click();
 	}

@@ -5,22 +5,28 @@ import org.openqa.selenium.WebDriver;
 
 public class BirdsPage 
 {
-	public static By returnToMainMenuLoc = By.linkText("Return to Main Menu");
-	public static By selectBirdLoc=By.linkText("AV-CB-01");
-	public  static By selectBirdLoc2=By.linkText("AV-SB-02");
+	private WebDriver driver;
+	private By returnToMainMenuLoc = By.linkText("Return to Main Menu");
+	private By selectBirdLoc=By.linkText("AV-CB-01");
+	private By selectBirdLoc2=By.linkText("AV-SB-02");
 	
-	public static void clickOnReturnToMainMenu(WebDriver driver)
+	public BirdsPage(WebDriver driver) 
+	{
+		this.driver = driver;
+	}
+	public void clickOnReturnToMainMenu()
 	{
 		driver.findElement(returnToMainMenuLoc).click();
 	}
-	public static void clickOnSelectedBird(WebDriver driver) {
+	public void clickOnSelectedBird() 
+	{
 		driver.findElement(selectBirdLoc).click();
 	}
-	public static void clickOnSelectedBird2(WebDriver driver)
+	public void clickOnSelectedBird2()
 	{
 		driver.findElement(selectBirdLoc2).click();
 	}
-	public static void printBirdsTable(WebDriver driver) 
+	public void printBirdsTable() 
 	{
 		for (int j = 1; j <= 2; j++)
 			System.out.print(driver.findElement(By.xpath("//table/tbody/tr[1]/th[" + j + "]")).getText() + "\t");

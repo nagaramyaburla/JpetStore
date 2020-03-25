@@ -3,55 +3,63 @@ package com.cts.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
-	public static By signInLoc = By.linkText("Sign In");
-	public static By searchtextBoxLoc = By.name("keyword");
-	public static By searchLoc = By.name("searchProducts");
-	public static By BirdsLoc = By.xpath("//body//area[1]");
-	public static By fishLoc = By.xpath("//body//area[2]");
-	public static By DogsLoc = By.xpath("//body//area[3]");
-	public static By ReptilesLoc = By.xpath("//body//area[4]");
-	public static By catsLoc = By.xpath("//body//area[5]");
-	public static By demoLoc = By.xpath("//a[text()='?']");
-	public static By cartLoc = By.xpath("//img[@name='img_cart']");
+public class HomePage 
+{
+	private WebDriver driver;
+	private By signInLoc = By.linkText("Sign In");
+	private By searchtextBoxLoc = By.name("keyword");
+	private By searchLoc = By.name("searchProducts");
+	private By BirdsLoc = By.xpath("//body//area[1]");
+	private By fishLoc = By.xpath("//body//area[2]");
+	private By DogsLoc = By.xpath("//body//area[3]");
+	private By ReptilesLoc = By.xpath("//body//area[4]");
+	private By catsLoc = By.xpath("//body//area[5]");
+	private By demoLoc = By.xpath("//a[text()='?']");
+	private By cartLoc = By.xpath("//img[@name='img_cart']");
 
-	public static void clickOnSignIn(WebDriver driver) {
+	public HomePage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	public void clickOnSignIn()
+	{
 		driver.findElement(signInLoc).click();
 	}
-
-	public static void Searching(WebDriver driver, String search) {
+	public void Searching(String search)
+	{
 		driver.findElement(searchtextBoxLoc).sendKeys(search);
 		driver.findElement(searchLoc).click();
 	}
-
-	public static void clickOnSearch(WebDriver driver) {
+	public void clickOnSearch()
+	{
 		driver.findElement(searchLoc).click();
 	}
-
-	public static void clickOnCats(WebDriver driver) {
+	public void clickOnCats()
+	{
 		driver.findElement(catsLoc).click();
 	}
-
-	public static void clickOnBirds(WebDriver driver) {
+	public void clickOnBirds() 
+	{
 		driver.findElement(BirdsLoc).click();
 	}
-
-	public static void clickOnFish(WebDriver driver) {
+	public void clickOnFish() 
+	{
 		driver.findElement(fishLoc).click();
 	}
-
-	public static void clickOnDogs(WebDriver driver) {
+	public void clickOnDogs() 
+	{
 		driver.findElement(DogsLoc).click();
 	}
-
-	public static void clickOnReptiles(WebDriver driver) {
+	public void clickOnReptiles()
+	{
 		driver.findElement(ReptilesLoc).click();
 	}
-	
-	public static void clickOnDemo(WebDriver driver) {
+	public void clickOnDemo() 
+	{
 		driver.findElement(demoLoc).click();
 	}
-	public static void clickOnCart(WebDriver driver) {
+	public void clickOnCart() 
+	{
 		driver.findElement(cartLoc).click();
 	}
 }

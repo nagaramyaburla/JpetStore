@@ -5,20 +5,24 @@ import org.openqa.selenium.WebDriver;
 
 public class AddToCartPage
 {
-	public static By addToCartLoc = By.xpath("(//a[text()='Add to Cart'])[1]");
+	private WebDriver driver;
+	private By addToCartLoc = By.xpath("(//a[text()='Add to Cart'])[1]");
+	private By removeLoc = By.linkText("Remove");
+	private By updateCartLoc = By.name("updateCartQuantities");
 	
-	public static By removeLoc = By.linkText("Remove");
-	public static By updateCartLoc = By.name("updateCartQuantities");
-	
-	public static void clickOnAddToCart(WebDriver driver)
+	public AddToCartPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	public void clickOnAddToCart()
 	{
 		driver.findElement(addToCartLoc).click();
 	}
-	public static void clickOnRemove(WebDriver driver)
+	public void clickOnRemove()
 	{
 		driver.findElement(removeLoc).click();
 	}
-	public static void clickOnUpdateCart(WebDriver driver)
+	public void clickOnUpdateCart()
 	{
 		driver.findElement(updateCartLoc).click();
 	}

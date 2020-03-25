@@ -5,14 +5,20 @@ import org.openqa.selenium.WebDriver;
 
 public class CatsPage
 {
-	public static By persianLoc = By.linkText("FL-DLH-02");
-	public static By ManxLoc=By.linkText("FL-DSH-01");
+	private WebDriver driver;
+	private By persianLoc = By.linkText("FL-DLH-02");
+	private By ManxLoc=By.linkText("FL-DSH-01");
 	
-	public static void clickOnPersian(WebDriver driver)
+	public CatsPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	public void clickOnPersian()
 	{
 		driver.findElement(persianLoc).click();
 	}
-	public static void clickOnManx(WebDriver driver) {
+	public void clickOnManx() 
+	{
 		driver.findElement(ManxLoc).click();
 	}
 }
